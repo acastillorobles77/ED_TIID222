@@ -38,3 +38,22 @@ print(frutas)
 # Eliminamos el primer elemento usando remove
 frutas.remove("manzana")
 print(frutas)
+
+# Declaramos un arreglo vacío
+arreglo = []
+
+try:
+    n = int(input("Ingrese el tamaño del arreglo: "))
+    for i in range(n):
+        dato = int(input(f"Escribe el valor a guardar en la posición {i+1}: "))
+        arreglo.append(dato)
+    print(arreglo)
+
+    n = int(input("Ingrese el tamaño del arreglo: "))
+    arreglo = [0] * n;
+    for i in range(n):
+        arreglo[i] = int(input(f"Escribe el valor a guardar en la posición {i+1}: "))
+    print(arreglo)
+except ValueError:
+    print("Error: Número inválido")
+
