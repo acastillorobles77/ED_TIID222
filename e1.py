@@ -65,7 +65,7 @@ def menu_pilas():
             case "4":
                 pass
             case _:
-                pass
+                print("Opción inválida, intentar de nuevo.")
 
 if __name__ == "__main__":
     op = None
