@@ -52,10 +52,40 @@ class ListaEnlazada:
             actual=actual.siguiente # y el siguiente pasa a ser el actual
         print("None")
 
+    def EliminarNodoInicio(self):
+        if self.cabeza == None: # si la cabeza está vacía no hay nada que eliminar 
+            print("La lista está vacía")
+            return
+        # En caso contrario, para eliminar el primer elemento simplemente ponemos el siguiente nodo al principio
+        self.cabeza=self.cabeza.siguiente
+
+    def EliminarNodoFinal(self):
+        if self.cabeza == None: # Nuevamente, si la cabeza está vacía no hay nada que eliminar 
+            print("La lista está vacía")
+            return
+        if self.cabeza.siguiente == None: # Si solo hay un nodo, eliminarlo
+            self.cabeza=None
+            return
+        # A partir de este punto, empezamos a recorrer la lista desde el segundo nodo
+        actual=self.cabeza
+        while actual.siguiente.siguiente:
+            actual=actual.siguiente
+        #en el momento en que llegemos a la "cola", le quitamos la referencia a ↓ 
+        # un nodo antes de la "cola" para que sea la nueva cola
+        actual.siguiente=None
+
 if __name__ == "__main__":
     lista = ListaEnlazada()
+    lista.InsertarAlInicio(4)
+    lista.InsertarAlInicio(3)
     lista.InsertarAlInicio(2)
     lista.InsertarAlInicio(1)
-    lista.InsertarAlFinal(3)
+    lista.InsertarAlFinal(56)
+    lista.ImprimirLista()
+    print("Eliminando nodo final")
+    lista.EliminarNodoFinal()
+    lista.ImprimirLista()
+    print("Eliminando nodo inicial")
+    lista.EliminarNodoInicio()
     lista.ImprimirLista()
 
