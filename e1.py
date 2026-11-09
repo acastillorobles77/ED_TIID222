@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-# no fue necesario realizar una investigación previa para completar el ejercicio.
-
 from collections import deque
 
 cola = deque()
